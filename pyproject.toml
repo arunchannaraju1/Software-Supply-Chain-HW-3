@@ -1,0 +1,73 @@
+[project]
+name = "ac1137"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "arunchannaraju1",email = "arunchannaraju@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "mypy (>=1.18.2,<2.0.0)",
+    "black (>=25.11.0,<26.0.0)",
+    "ruff (>=0.14.4,<0.15.0)",
+    "flake8 (>=7.3.0,<8.0.0)",
+    "pylint (>=4.0.2,<5.0.0)",
+    "bandit (>=1.8.6,<2.0.0)",
+    "autodocstring (>=0.1.2,<0.2.0)"
+]
+
+
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.mypy_cache
+  | \.pytest_cache
+  | build
+  | dist
+)/
+'''
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+select = ["E", "F", "W"]
+ignore = ["E501"]  # ignore line length errors if black handles them
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E203", "W503"]
+
+[tool.pylint]
+max-line-length = 88
+disable = ["C0114", "C0115", "C0116"]  # disable missing docstring warnings
+
+[tool.bandit]
+skips = ["B101"]  # skip assert statement warning
+exclude = ["tests"]
+
+[tool.autodocstring]
+style = "google"
+
+[tool.poetry]
+package-mode = false
