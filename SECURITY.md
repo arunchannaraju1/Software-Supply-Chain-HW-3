@@ -10,7 +10,7 @@ We actively support only the latest version of this project, available on the `m
 
 ## Reporting a Vulnerability
 
-We take security vulnerabilities seriously. If you identify a security issue, report it immediately by creating a GitHub issue in this repository or by emailing sdg8193@nyu.edu for confidential matters.
+We take security vulnerabilities seriously. If you identify a security issue, report it immediately by creating a GitHub issue in this repository or by emailing for confidential matters.
 
 When reporting a vulnerability, include a detailed description of the issue, steps to reproduce it, and any other relevant information to facilitate a swift resolution.
 
