@@ -1,10 +1,9 @@
 repos:
   - repo: local
     hooks:
-      - id: trufflehog
-        name: TruffleHog Secrets Scan (Latest Commit)
-        description: Detects secrets in staged changes for a fast check.
-        entry:  bash -c 'git diff --cached --name-only | xargs trufflehog filesystem --no-verification --fail --include-detectors=all'
+      - id: trufflehog-commit-scan
+        name: TruffleHog secret scan (new commits)
+        entry: bash -c 'trufflehog git --fail --no-update --since-commit $(git rev-parse HEAD~1)'
         language: system
-        stages: [commit]
+        pass_filenames: false
 
